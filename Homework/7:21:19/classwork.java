@@ -14,20 +14,20 @@ public class classwork{
     map.put(1, 2);
     map.put(2, 3);
     map.put(3, 4);
-    System.out.println("Distance:" + minDistance(0, 4));
+    System.out.println("distance travelled is " + minDistance(0, 4));
   }
   public static int minDistance(Integer start, Integer end){
     int distance = 0;
-
+    ArrayList<Integer> count = new ArrayList<Integer>();
     Queue u = new Queue();
     Queue r = new Queue();
     u.enqueue(start);
     while (u.size() > 0){
-      if (u.peek() != end){
+      if (u.peek() == end){
+        return distance;
+      }else{
         r.enqueue(map.get(u.peek()));
         u.dequeue();
-      }else{
-        return distance;
       }
       u = r;
       r = new Queue();
