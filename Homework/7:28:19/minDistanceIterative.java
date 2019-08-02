@@ -18,7 +18,6 @@ public class minDistanceIterative{
       for (int i = 0; i < graph.size(); i++){
         for (int j = 0; j < path.size(); j++){
           if (graph.containsKey(j)){
-            System.out.println(graph.getClass().getSimpleName());
             if((graph.get(point)).get(i) != path.get(j) && graph.get(point)[i] == end){
               return (path.get(j) + " " + i);
             }else {
